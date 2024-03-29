@@ -1,5 +1,5 @@
 # Etch
- Etch is a digital signal processing Eurorack module that selectively removes signal quality vertically (through bit crushing) and horizontally (through sample-crushing)
+Etch is a digital signal processing Eurorack module that selectively removes signal quality vertically (through bit crushing) and horizontally (through sample-crushing).
 
 
 ## Modes:

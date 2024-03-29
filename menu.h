@@ -19,7 +19,8 @@ ___________ __         .__
         \/     \/     \/        
         
 ETCH Firmware source code designed to run on the AVR128DA28.
-Copyright (C) 2022 Tyler Klein
+Copyright (C) 2024 Tyler Klein (Things Made Simple)
+Etch Hardware Design by Juanito Moore (Modular for the Masses)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
