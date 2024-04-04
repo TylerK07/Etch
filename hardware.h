@@ -91,6 +91,9 @@ firmware code.
  * Rotary Encoder Interrupts & Functions   *
  *******************************************/
 
+ #define INVERT_ENCODER false          // If true, then the encoder will work in the other direction
+
+
 // Global Variables used in the Interrupt Service Routine
 volatile int16_t rot_value   = 0;                                              // current value of the rotary encoder
 volatile uint8_t rot_min     = 0;                                              // current minimum of the rotary encoder
@@ -101,7 +104,7 @@ volatile bool    rot_changed = false;                                          /
 //Rotary Encoder Interrupt Service Routine - Handles interrupt events caused by rotating the encoder
 ISR(PORTC_PORT_vect) {
   PORTC.INTFLAGS = PORTC.INTFLAGS;                                             // Reset the interrupt flag
-  if( PORTC.IN & 0b00000010 ){                                                 // If rotary encoder turned counter clockwise
+  if( INVERT_ENCODER ^ ((PORTC.IN & 0b00000010)>>1) ){                         // If rotary encoder turned counter clockwise
     rot_value -= rot_inc;                                                      // Decrease rotary encoder value by increment
     if( rot_value < rot_min ) rot_value = rot_min;                             // Make sure it didn't go below the minimum
   } else {                                                                     // If rotary encoder turned clockwise
